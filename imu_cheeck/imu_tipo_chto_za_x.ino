@@ -1,8 +1,8 @@
 #include <SPI.h>
 
 #define PIN_SCLK 22
-#define PIN_SDI  21   // SDA/SDI  -> MOSI
-#define PIN_SDO  19   // SAO/SDO  -> MISO
+#define PIN_SDI  21   // SDA/SDI -  MOSI
+#define PIN_SDO  19   // SAO/SDO  - MISO
 #define PIN_CS   27
 #define PIN_PS   26
 
