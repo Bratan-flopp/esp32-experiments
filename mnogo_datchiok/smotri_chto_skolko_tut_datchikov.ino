@@ -3,22 +3,22 @@
 #include <WebSocketsServer.h>
 
 // ======== ПИНЫ ========
-#define MIC_PIN     34   // MAX9814 OUT
-#define GAIN_PIN    32   // MAX9814 GAIN
-#define AR_PIN      33   // MAX9814 AR
-#define ENC_CLK     18   // Энкодер CLK
-#define ENC_DT      19   // Энкодер DT
-#define ENC_SW      5    // Энкодер кнопка
+#define MIC_PIN 34   // MAX9814 OUT
+#define GAIN_PIN 32   // MAX9814 GAIN
+#define AR_PIN 33   // MAX9814 AR
+#define ENC_CLK 18   // Энкодер CLK
+#define ENC_DT 19   // Энкодер DT
+#define ENC_SW 5    // Энкодер кнопка
 #define BUZZER_PIN  25   // Пассивный зуммер
-#define BTN_PIN     4    // KY-004
-#define RGB_R       27
-#define RGB_G       26
-#define RGB_B       14
-#define LED1        12
-#define LED2        13
+#define BTN_PIN 4    // KY-004
+#define RGB_R 27
+#define RGB_G 26
+#define RGB_B 14
+#define LED1 12
+#define LED2 13
 
 // ======== Wi-Fi ========
-const char* ssid     = "ESP32_LAB";
+const char* ssid = "ESP32_LAB";
 const char* password = "12345678";
 
 WebServer     server(80);
@@ -26,22 +26,22 @@ WebSocketsServer ws(81);
 
 // ======== Состояние ========
 int  currentMode   = 1;   // 1-5
-int  gainMode      = 2;   // 0=40дБ 1=50дБ 2=60дБ
-int  arMode        = 1;   // 0=быстрый 1=средний 2=медленный
-int  genFreq       = 440; // Гц для генератора
-int  genDuty       = 50;  // скважность %
-int  ampGain       = 1;   // коэффициент усиления режим 5
+int  gainMode = 2;   // 0=40дБ 1=50дБ 2=60дБ
+int  arMode = 1;   // 0=быстрый 1=средний 2=медленный
+int  genFreq = 440; // Гц для генератора
+int  genDuty = 50;  // скважность %
+int  ampGain = 1;   // коэффициент усиления режим 5
 bool oosEnabled    = false;
 
 // ======== Счётчик (режим 4) ========
-volatile int  counter     = 0;
+volatile int  counter = 0;
 volatile bool btnPressed  = false;
 unsigned long btnLastTime = 0;
 unsigned long btnHoldStart = 0;
 
 // ======== Энкодер ========
-volatile int  encValue    = 440;
-volatile int  lastCLK     = HIGH;
+volatile int  encValue = 440;
+volatile int  lastCLK = HIGH;
 
 // ======== ADC буфер ========
 #define SAMPLES 100
